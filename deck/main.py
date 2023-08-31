@@ -12,10 +12,10 @@ if __name__ == "__main__":
     deck = Deck()
     deck.shuffle()
 
-    player_1 = deck.get_combination()
+    player_1 = deck.get_random_combination()
     print(f"Player_1: {player_1.show()}")
 
-    player_2 = deck.get_combination()
+    player_2 = deck.get_random_combination()
     print(f"Player_2: {player_2.show()}")
 
     print("------------------------------------------------")

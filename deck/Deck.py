@@ -31,7 +31,7 @@ class Deck:
             r = random.randint(0, i)
             self.cards[i], self.cards[r] = self.cards[r], self.cards[i]
 
-    def get_combination(self):
+    def get_random_combination(self):
         random.shuffle(self.cards)
         cards = []
         for i in range(0, 3):
