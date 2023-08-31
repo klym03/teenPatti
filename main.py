@@ -162,8 +162,3 @@ else:
         else:
             print("draw")
 
-
-
-
-def hand(winner):
-
