@@ -6,16 +6,20 @@
 #
 
 from deck.Deck import Deck
-from deck.Utils import get_winner_looser
+from deck.Utils import get_winner_looser, is_same
 
 if __name__ == "__main__":
     deck = Deck()
     deck.shuffle()
 
-    player_1 = deck.get_random_combination()
-    print(f"Player_1: {player_1.show()}")
+    # do while loop
+    while True:
+        player_1 = deck.get_straight()
+        player_2 = deck.get_straight()
+        if not is_same(player_1, player_2):
+            break
 
-    player_2 = deck.get_random_combination()
+    print(f"Player_1: {player_1.show()}")
     print(f"Player_2: {player_2.show()}")
 
     print("------------------------------------------------")

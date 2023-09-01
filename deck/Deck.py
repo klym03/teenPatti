@@ -19,7 +19,7 @@ class Deck:
 
     def build(self):
         for s in [1, 2, 3, 4]:
-            for v in range(1, 14):
+            for v in range(2, 15):
                 self.cards.append(Card(s, v))
 
     def show(self):

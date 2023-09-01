@@ -14,7 +14,7 @@ class Card:
         return "{}{}".format(self.convert_value(), self.convert_suit())
 
     def convert_value(self):
-        if self.value == 1:
+        if self.value == 14:
             self.value = "A"
         elif self.value == 11:
             self.value = "J"

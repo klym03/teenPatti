@@ -17,6 +17,8 @@ def get_winner_looser(combination_1, combination_2):
         else:
             return None, None
 
+def is_same(combination_1, combination_2):
+    return combination_1.points == combination_2.points and combination_1.weight == combination_2.weight
 
 def get_high_card(cards):
     return max(cards[0].value, cards[1].value, cards[2].value)
@@ -29,21 +31,16 @@ def get_pair_card(cards):
         pair_card_value = cards[0].value
     elif cards[1].value == cards[2].value:
         pair_card_value = cards[1].value
-    if pair_card_value == 1:
-        return 14
-    else:
-        return pair_card_value
+    return pair_card_value
 
 
 def get_set_card(cards):
     if cards[0].value == cards[1].value == cards[2].value:
-        if cards[0].value == 1:
-            return 14
         return cards[0].value
 
 
 def has_ace(cards):
-    return cards[0].value == 1 or cards[1].value == 1 or cards[2].value == 1
+    return cards[0].value == 14 or cards[1].value == 14 or cards[2].value == 14
 
 
 def has_king(cards):

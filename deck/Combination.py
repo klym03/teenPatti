@@ -5,7 +5,7 @@
 # Python version: 3.8
 #
 
-from deck.Utils import Utils
+from deck.Utils import *
 
 
 class Combination:
@@ -55,19 +55,13 @@ class Combination:
 
     def __get_weight(self):
         if self.is_none() or self.is_flash() or self.is_straight():
-            self.weight = Utils.get_high_card(self.cards)
+            self.weight = get_high_card(self.cards)
         elif self.is_pair():
-            self.weight = Utils.get_pair_card(self.cards)
+            self.weight = get_pair_card(self.cards)
         elif self.is_set():
-            self.weight = Utils.get_set_card(self.cards)
+            self.weight = get_set_card(self.cards)
         elif self.is_straight() or self.is_straight_flash():
-            if Utils.has_ace(self.cards):
-                if Utils.has_two(self.cards):
-                    self.weight = 1
-                elif Utils.has_king(self.cards):
-                    self.weight = 14
-            else:
-                self.weight = Utils.get_high_card(self.cards)
+            self.weight = get_high_card(self.cards)
 
     def get_combination(self):
         self.__get_points()
@@ -84,7 +78,7 @@ class Combination:
 # 6. Straight flash - 6 points
 #
 # Weight of cards
-# 1. Ace - 1 / 14
+# 1. Ace - 14
 # 2. 2 - 2
 # 3. 3 - 3
 # 4. 4 - 4
