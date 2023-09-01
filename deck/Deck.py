@@ -40,6 +40,17 @@ class Deck:
         self.__remove_cards(cards)
         return combination.get_combination()
 
+    def get_random_combination_without_pair(self):
+        while True:
+            random.shuffle(self.cards)
+            cards = []
+            for i in range(0, 3):
+                cards.append(self.cards[i])
+            combination = Combination(cards)
+            if not combination.is_pair():
+                self.__remove_cards(cards)
+                return combination.get_combination()
+
     def get_none(self):
         while True:
             random.shuffle(self.cards)
